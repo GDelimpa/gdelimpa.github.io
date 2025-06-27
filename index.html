@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giannis Delimpaltadakis</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --link-color: #004080;
+      --header-bg: #004080;
+      --nav-bg: #003366;
+      --footer-bg: #004080;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --link-color: #bb86fc;
+      --header-bg: #1f1f1f;
+      --nav-bg: #2c2c2c;
+      --footer-bg: #1f1f1f;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-top: 1rem;
+    }
+    nav {
+      background-color: var(--nav-bg);
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      display: inline;
+      margin: 0 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--footer-bg);
+      color: white;
+      margin-top: 2rem;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--link-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</head>
+<body>
+  <!--<button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>-->
+  <header>
+    <img src="profile.jpg" alt="Giannis Delimpaltadakis" />
+    <h1>Giannis Delimpaltadakis</h1>
+    <p>Postdoctoral Researcher | Eindhoven University of Technology</p>
+    <p>i.delimpaltadakis[at]tue[dot]nl</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.pdf">CV</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <h2>Research Profile</h2>
+      <p>I am a Postdoctoral researcher at TU Eindhoven (Control Systems Technology group, Mechanical Engineering). I am active in the field of <b>control theory</b> and its intersections with <b>optimization</b> and <b>formal methods</b>. My specific research interests span the following:
+	<ul>
+    <li><b>The interface of formal methods and dynamical systems,</b> including hybrid systems (systems with both continuous and discrete dynamics), finite-state models of dynamical systems (formal abstractions), verification and control of dynamical systems through finite abstractions, formal languages and automata.</li>
+    <li><b>Stochastic dynamics and control,</b> including Markov decision processes, reinforcement learning, and information theory in control.</li>
+    <li><b>The interface of optimization and control,</b> including nonsmooth dynamics, optimization-based control for safety-critical tasks (control-barrier functions, projection-based control), and feedback optimization (optimization algorithms interconnected with dynamical systems, online optimization of dynamical systems).</li>
+	</ul></p>
+    </section>
+    <section>
+	<h2>Academic Background</h2>
+	<p>I obtained the Diploma (joint BSc. and MSc. degree) in Electrical and Computer Engineering, from the National Technical University of Athens (NTUA) in 2017. I obtained my PhD, <b>Cum Laude</b> (top 5% in the Netherlands), from Delft University of Technology, in 2022.</p>	
+    </section>
+    <section>
+      <h2>News</h2>
+      <ul>
+		<li>[Jun 2025] I gave an invited talk at the OBI2 workshop on Dynamics, Optimization and Control, in Groningen. More info on the workshop can be found  
+<a href="https://sites.google.com/rug.nl/obi2/">here</a>.</li>
+		<li>[Jun 2025] Paper on predictable RL published at TMLR! <a href="https://openreview.net/forum?id=DDUsc1lD27">Link to the paper</a></li>
+        <li>[Apr 2025] Paper on memory-dependent abstractions of stochastic processes accepted at HSCC 2025! <a href="https://arxiv.org/abs/2502.04240">Link to the paper</a></li>
+        <li>[Mar 2025] Preprint on feedback optimization with state constraints appeared on arXiv. </li> <a href="https://arxiv.org/abs/2504.00813">Link to the preprint</a>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Giannis Delimpaltadakis</p>
+  </footer>
+</body>
+</html>
