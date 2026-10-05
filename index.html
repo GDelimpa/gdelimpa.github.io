@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+li:not(:last-of-type) {
+  margin-block-end: 1em;
+}
+
+:is(ul, ol)+ :is(ul, ol),
+li :is(ul, ol) {
+  margin-block-start: 1em;
+}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Giannis Delimpaltadakis</title>
@@ -123,7 +131,7 @@
     </section>
     <section>
       <h2>News</h2>
-      <ul style="margin-bottom: 15px">
+      <ul>
 		<li>[Oct 2026] <a href="https://arxiv.org/abs/2610.02950">Preprint</a> on memory-dependent interval Markov chain abstractions appeared on arXiv.</li>  
 		<li>[Jun 2026] I gave a talk at the Delft Center for Systems and Control, TU Delft, for their <a href="https://www.youtube.com/@DCSCTUDelft">DCSC Colloquia Series</a>! The video will be uploaded soon. </li>
 		<li>[Mar 2026] <a href="https://doi.org/10.1109/OJCSYS.2026.3675495">Paper</a> on the tempered Bayes filter accepted at IEEE OJ-CSYS!</li>  
