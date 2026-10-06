@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research spotlights by Giannis Delimpaltadakis: the information theory of finite abstractions and safe feedback optimization through control barrier functions.">
+  <meta name="color-scheme" content="light dark">
+  <title>Research Spotlight | Giannis Delimpaltadakis</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="site-wrap">
+  <aside class="profile">
+    <a class="portrait-link" href="index.html" aria-label="Giannis Delimpaltadakis — home"><img class="portrait" src="profile.jpg" alt="Giannis Delimpaltadakis" width="168" height="168"></a>
+    <a class="profile-name" href="index.html">Giannis<br>Delimpaltadakis<span class="name-dot">.</span></a>
+    <p class="role">Senior Research Scientist<br><a href="https://ai4i.it/">AI4I</a> · RIAS Lab</p>
+    <nav class="main-nav" aria-label="Main navigation"><a href="index.html">About</a><a href="research.html" aria-current="page">Research Spotlight</a><a href="publications.html">Publications</a><a href="CVacademic.pdf">Curriculum vitae ↗</a></nav>
+    <div class="profile-links">
+      <a href="mailto:ioannis.delimpaltadakis@ai4i.it">Email <span aria-hidden="true">↗</span></a>
+      <a href="https://scholar.google.com/citations?user=DHdgzYwAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a>
+    </div>
+    <button class="theme-toggle" type="button" hidden aria-pressed="false">Dark appearance</button>
+  </aside>
+  <div class="content-column">
+    <main id="main">
+<section class="intro spotlight-intro">
+  <p class="eyebrow">SELECTED WORK</p>
+  <h1>Research spotlight<span class="name-dot">.</span></h1>
+  <p class="intro-copy">A closer look at two works connecting dynamical systems with information theory and optimization.</p>
+  <nav class="spotlight-jumps" aria-label="Jump to a research spotlight">
+    <a href="#information-theory">Information theory of abstractions ↓</a>
+    <a href="#safe-optimization">Safe feedback optimization ↓</a>
+  </nav>
+</section>
+
+<article class="spotlight section-block" id="information-theory" aria-labelledby="information-title">
+  <p class="eyebrow">01 / INFORMATION THEORY &amp; FORMAL METHODS</p>
+  <h2 id="information-title">The information theory of finite abstractions</h2>
+  <p class="spotlight-lead">Quantifying how small a finite model can be while retaining a prescribed level of accuracy.</p>
+  <p>Finite abstractions replace continuous dynamics with discrete models that retain all system behaviours, enabling formal verification. But accurate models can become prohibitively large. With Gabriel Gleizer, I connect this scalability problem to <strong>rate–distortion theory</strong>, the information theory of lossy compression: an abstraction encodes system trajectories, its size determines the rate, and its average deviation from the system determines the distortion.</p>
+  <p>For deterministic autonomous systems, we derive fundamental lower bounds on the size–accuracy tradeoff. These bounds reflect both <strong>trajectory entropy and the geometry of the trajectory set</strong>. For the chaotic doubling map, we also construct an abstraction that is optimal for the studied size–accuracy criterion.</p>
+  <aside class="spotlight-significance"><h3>Why it matters</h3><p>This gives abstraction design a quantitative benchmark: it helps distinguish limitations imposed by the dynamics from inefficiencies of a particular construction, and opens a route to designing minimal abstractions through ideas from optimal coding.</p></aside>
+  <figure class="spotlight-figure">
+    <a href="assets/abstraction-trajectory-cover.png" aria-label="View the trajectory-cover figure at full resolution"><img src="assets/abstraction-trajectory-cover.png" width="1545" height="432" alt="Two views of length-three trajectories of the doubling map: an optimal cover on the left, and the corresponding abstraction’s blue reachable-set boxes on the right." loading="lazy"></a>
+    <figcaption><strong>From coding trajectories to constructing abstractions.</strong> An optimal cover of the doubling map’s trajectory set (left) and the corresponding abstraction’s reachable sets (right). Figure 5 from the paper; click to enlarge.</figcaption>
+  </figure>
+  <div class="spotlight-reference"><p>G. Delimpaltadakis and G. Gleizer<br><cite>An Information Theory of Finite Abstractions and their Fundamental Scalability Limits</cite></p><a class="button" href="https://arxiv.org/abs/2512.03977">Read the paper <span aria-hidden="true">↗</span></a></div>
+</article>
+
+<article class="spotlight section-block" id="safe-optimization" aria-labelledby="safety-title">
+  <p class="eyebrow">02 / OPTIMIZATION &amp; CONTROL</p>
+  <h2 id="safety-title">Safe feedback optimization</h2>
+  <p class="spotlight-lead">Steering a system towards an optimal operating point while respecting safety constraints along the way.</p>
+  <p>An optimal steady state can be safe even when the journey towards it is not. Feedback optimization uses measurements to continually adjust a system’s inputs, but enforcing constraints only at equilibrium can allow dangerous transient violations. With Pol Mestres, Jorge Cortés and Maurice Heemels, I develop a controller that combines <strong>safe gradient flows with high-order control barrier functions</strong> to enforce both state and input constraints throughout operation.</p>
+  <p>The controller solves a quadratic program online. Under the paper’s assumptions and from admissible initial conditions, we establish safety guarantees and conditions linking closed-loop equilibria to the optimization problem’s critical points. We also prove local convergence to interior optima, and global convergence in certain convex settings under additional conditions.</p>
+  <aside class="spotlight-significance"><h3>Why it matters</h3><p>For physical systems, reaching a good operating point is only part of the task: the path must also be safe. This work brings transient safety into feedback optimization while explicitly addressing its interaction with stability and optimality.</p></aside>
+  <figure class="spotlight-figure spotlight-figure-compact">
+    <a href="assets/safe-feedback-comparison.png" aria-label="View the safe feedback optimization comparison at full resolution"><img src="assets/safe-feedback-comparison.png" width="704" height="500" alt="Simulation in the state plane: the proposed method’s blue trajectory stays within the red dashed safety boundary, while the orange comparison trajectory crosses it before approaching the same steady-state optimizer." loading="lazy"></a>
+    <figcaption><strong>A safe destination is not enough.</strong> In this simulation, the proposed method (blue) respects the state constraint throughout the transient; the comparison method (orange) violates it. Panel (c) of Figure 1 from the paper; click to enlarge.</figcaption>
+  </figure>
+  <div class="spotlight-reference"><p>G. Delimpaltadakis*, P. Mestres*, J. Cortés and W. P. M. H. Heemels<br><cite>Safe Feedback Optimization through Control Barrier Functions</cite><br><span class="spotlight-equal">* Equal contribution.</span></p><a class="button" href="https://arxiv.org/abs/2602.09928">Read the paper <span aria-hidden="true">↗</span></a></div>
+</article>
+</main>
+    <footer>© 2026 Giannis Delimpaltadakis <a href="#main">Back to top ↑</a></footer>
+  </div>
+</div>
+</body>
+</html>
