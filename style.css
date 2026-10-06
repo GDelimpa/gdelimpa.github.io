@@ -597,3 +597,14 @@ footer {
 
 .abstraction-overview > a { width:88%; margin-inline:auto; }
 @media(max-width:720px) { .abstraction-overview > a { width:100%; } }
+
+.spotlight-table-wrap { margin:24px 0; overflow-x:auto; }
+.spotlight-results { width:100%; border-collapse:collapse; font-size:13px; }
+.spotlight-results caption { text-align:left; font-weight:600; margin-bottom:12px; color:var(--ink); }
+.spotlight-results th, .spotlight-results td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:right; font-variant-numeric:tabular-nums; }
+.spotlight-results th:first-child { text-align:left; }
+.spotlight-results tbody th { font-weight:400; }
+.spotlight-results thead { font-size:12px; color:var(--muted); }
+.spotlight-results .result-highlight { background:var(--tint); color:var(--accent); }
+.spotlight-results .result-highlight th, .spotlight-results .result-highlight td { font-weight:700; }
+.results-note { font-size:11px; color:var(--muted); line-height:1.7; margin-top:10px; }
