@@ -592,3 +592,8 @@ footer {
   .spotlight-significance { padding:14px 16px; }
   .spotlight-figure > a { padding:8px; }
 }
+
+
+
+.abstraction-overview > a { width:88%; margin-inline:auto; }
+@media(max-width:720px) { .abstraction-overview > a { width:100%; } }

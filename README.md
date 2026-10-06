@@ -31,4 +31,8 @@ Publication entries are compact and numbered in reverse within each category. Nu
 
 ## Research Spotlight
 
-`research.html` contains two paper-based research summaries. The figures in `assets/` are extracted from Figure 5 of the revised information-theory paper and Figure 1(c) of the revised safe-feedback-optimization paper. Captions link them to their papers; click each figure for its full resolution. The source PDFs are not included in the deployed site.
+`research.html` contains two paper-based research summaries. The figures in `assets/` are extracted from Figure 6 of the revised information-theory paper and Figure 1(c) of the revised safe-feedback-optimization paper. Captions link them to their papers; click each figure for its full resolution. The source PDFs are not included in the deployed site.
+
+The information-theory spotlight uses the uniform-grid distortion comparison and discusses the potential unexploited gap without presenting the lower bound as an achievable optimum. Both summaries follow the papers’ abstracts and introductions. The personal quote has no attribution line.
+
+`assets/system-to-abstraction.svg` combines the three supplied stable-focus figures, unchanged, into one labelled left-to-right illustration. It embeds the original PNGs, so no additional image files are required.
