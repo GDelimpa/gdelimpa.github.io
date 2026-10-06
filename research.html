@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research spotlights by Giannis Delimpaltadakis: the information theory of finite abstractions and safe feedback optimization through control barrier functions.">
+  <meta name="description" content="Research spotlights by Giannis Delimpaltadakis.">
   <meta name="color-scheme" content="light dark">
   <title>Research Spotlight | Giannis Delimpaltadakis</title>
   <link rel="stylesheet" href="style.css">
@@ -28,10 +28,11 @@
 <section class="intro spotlight-intro">
   <p class="eyebrow">SELECTED WORK</p>
   <h1>Research spotlight<span class="name-dot">.</span></h1>
-  <p class="intro-copy">A closer look at two works connecting dynamical systems with information theory and optimization.</p>
+  <p class="intro-copy">A closer look at some works of mine.</p>
   <nav class="spotlight-jumps" aria-label="Jump to a research spotlight">
     <a href="#information-theory">Information theory of abstractions ↓</a>
     <a href="#safe-optimization">Safe feedback optimization ↓</a>
+    <a href="#continuous-action-imdps">Continuous-action IMDPs ↓</a>
   </nav>
 </section>
 
@@ -66,6 +67,130 @@
   </figure>
   <div class="spotlight-reference"><p>G. Delimpaltadakis*, P. Mestres*, J. Cortés and W. P. M. H. Heemels<br><cite>Safe Feedback Optimization through Control Barrier Functions</cite><br><span class="spotlight-equal">* Equal contribution.</span></p><a class="button" href="https://arxiv.org/abs/2602.09928">Read the paper <span aria-hidden="true">↗</span></a></div>
 </article>
+
+<article class="spotlight section-block" id="continuous-action-imdps"
+         aria-labelledby="caimdp-title">
+  <p class="eyebrow">03 / STOCHASTIC CONTROL &amp; FORMAL METHODS</p>
+  <h2 id="caimdp-title">Interval Markov decision processes with continuous action spaces</h2>
+
+  <p class="spotlight-lead">
+    Optimal robust control with continuous actions and uncertain transition probabilities.
+  </p>
+
+  <p>
+    Interval Markov decision processes (IMDPs) are finite-state MDps whose
+    transition probabilities belong to intervals. They model uncertain stochastic environments, and are also widely used as
+    abstractions of stochastic systems for control synthesis. However, there have been no algorithms for control synthesis for IMDPs with continuous action spaces. Existing methods discretize continuous actions, and thus can be computationally expensive and introduce suboptimality. With Morteza Lahijanian, Manuel Mazo Jr. and Luca Laurenti, we introduce
+    <strong>continuous-action IMDPs (caIMDPs)</strong>, in which the transition
+    probability bounds are functions of the action variables.
+  </p>
+
+  <p>
+    We study value iteration in caIMDPs for maximizing finite-horizon expected cumulative
+    rewards under worst-case transition uncertainty. Our main result exactly
+    decomposes each value-iteration max–min problem into
+    <strong>|Q| maximization problems</strong>, where |Q| is the number of states.
+    This reveals cases solvable through linear or convex programming, depending
+    on the structure of the transition bounds and action set. We also identify
+    conditions under which considering only the vertices of a polytopic action
+    set is sufficient for optimality.
+  </p>
+
+  <aside class="spotlight-significance">
+    <h3>Why it matters</h3>
+    <p>
+      Keeping actions continuous avoids the exponential growth of action
+      discretization with the control dimension and the performance loss caused by
+      discretization. The exact reformulation provides a principled route to
+      optimal caIMDP policies, with efficient computation in the identified
+      structured cases.
+    </p>
+  </aside>
+
+
+  <figure class="spotlight-figure spotlight-figure-compact">
+  <a href="assets/caimdp-reward-comparison.png"
+     aria-label="Enlarge the caIMDP reward comparison">
+    <img src="assets/caimdp-reward-comparison.png"
+         width="948" height="748" loading="lazy"
+         alt="The caIMDP optimal reward exceeds the rewards from sampled-action IMDPs across all 25 states.">
+  </a>
+  <figcaption>
+    <strong>Better rewards without a finer action grid.</strong>
+    Figure 1 compares the caIMDP optimal reward (solid line) with
+    rewards from IMDPs using finite sets of randomly sampled actions
+    (dashed lines). The example has 25 states, three action dimensions
+    and a horizon of 10, with concave lower and convex upper
+    transition bounds.
+  </figcaption>
+</figure>
+
+<div class="spotlight-table-wrap">
+  <table class="spotlight-results">
+    <caption>
+      Table 1: computation time and suboptimality in the numerical example
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Action set</th>
+        <th scope="col">Average CPU time (s)</th>
+        <th scope="col">Average suboptimality</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1 sampled action</th>
+        <td>88</td><td>16.51%</td>
+      </tr>
+      <tr>
+        <th scope="row">8 sampled actions</th>
+        <td>668</td><td>7.86%</td>
+      </tr>
+      <tr>
+        <th scope="row">27 sampled actions</th>
+        <td>2,170</td><td>5.17%</td>
+      </tr>
+      <tr>
+        <th scope="row">64 sampled actions</th>
+        <td>6,225</td><td>4.59%</td>
+      </tr>
+      <tr>
+        <th scope="row">125 sampled actions</th>
+        <td>9,736</td><td>4.32%</td>
+      </tr>
+      <tr class="result-highlight">
+        <th scope="row">caIMDP (continuous actions)</th>
+        <td>2,212</td><td>0%</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="results-note">
+    Suboptimality is the maximum relative reward loss across states,
+    averaged over trials. The caIMDP solution is the reference.
+  </p>
+</div>
+
+<aside class="spotlight-significance">
+  <h3>Optimality at a competitive computational cost</h3>
+  <p>
+    In this example, caIMDP synthesis achieves the optimal robust reward
+    at almost the same computational cost as using just 27 sampled
+    actions, which leaves a 5.17% average suboptimality gap. It is also
+    approximately <strong>4.4 times faster</strong> than using 125
+    sampled actions, which still leaves a 4.32% gap.
+  </p>
+</aside>
+  <div class="spotlight-reference">
+    <p>
+      G. Delimpaltadakis, M. Lahijanian, M. Mazo Jr. and L. Laurenti<br>
+      <cite>Interval Markov Decision Processes with Continuous Action-Spaces</cite><br>
+      ACM HSCC, 2023
+    </p>
+    <a class="button" href="https://doi.org/10.1145/3575870.3587117">
+      Read the paper <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>      
 </main>
     <footer>© 2026 Giannis Delimpaltadakis <a href="#main">Back to top ↑</a></footer>
   </div>
