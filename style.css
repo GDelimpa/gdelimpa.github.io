@@ -674,6 +674,14 @@ footer {
   line-height: 1.7;
 }
 
+.role .profile-email {
+  display: block;
+  margin: 6px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
 .talk-paper strong {
   color: var(--ink);
 }
